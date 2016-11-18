@@ -20,7 +20,7 @@ def read(*names, **kwargs):
 
 setup(
     name='getdoc',
-    version='0.2.0',
+    version='0.3.0',
     license='MPL 2.0',
     description="Simple function to get a python module's doc recursively",
     long_description='%s\n%s' % (
