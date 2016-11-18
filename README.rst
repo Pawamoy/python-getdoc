@@ -50,8 +50,6 @@ Software licensed under `MPL 2.0`_ license.
 Installation
 ============
 
-(Not yet on PyPi, clone the repo)
-
 ::
 
     pip install getdoc
@@ -75,21 +73,39 @@ Usage
     from getdoc import get_module_doc
 
     doc = get_module_doc(some_module)
-    # The result is a nested list of tuple: (type, name, doc),
-    # type being 'function', 'class', or 'module'.
+    # The result is a dictionnary: {type, name, doc, [nested_doc]},
+    # type being 'function', 'class', or 'module',
+    # and nested_doc being a list of dictionnaries as above.
 
-    # You can exclude modules, classes or functions with exclude options.
-    # Their content are used as prefixes:
-    doc = get_module_doc(some_module,
-                         exclude_module=('django', ),
-                         exclude_class=('DoesNotExist', 'MultipleObjectsReturned'),
-                         exclude_function=('_', ))
+
+A bit more advanced...
+
+.. code:: python
+
+    # You can exclude modules, classes or functions with a Config instance.
+    from getdoc import Config, Ex, default_config, django_app_config
+
+    # The following is equal to django_app_config
+    custom_config = Config(
+        exclude_module=[
+            Ex('django', Ex.Method.EXACT),
+            Ex('django.')],
+        exclude_class=[
+            Ex('DoesNotExist', Ex.Method.EXACT),
+            Ex('MultipleObjectsReturned', Ex.Method.EXACT)],
+        exclude_function=[
+            Ex('_'),
+            Ex('ugettext', Ex.Method.EXACT)],
+        nested_class=False,  # Don't get doc for nested class
+        missing_doc=True)  # Still return items if no doc and no nested doc
+
+    # Default method for exclusion is PREFIX.
+    # There is also SUFFIX, EXACT, CONTAINS, REGEX.
+
+    doc = get_module_doc(some_module, config=custom_config)
 
     # You can get doc for just a class (and its contents), or just a function.
     from getdoc import get_class_doc, get_function_doc
 
-    doc = get_class_doc(some_module.SomeClass,
-                        exclude_class=None,
-                        exclude_function=None)
-    doc = get_function_doc(some_module.SomeClass.some_function,
-                           exclude_function=None)
+    doc = get_class_doc(some_module.SomeClass, config=custom_config)
+    doc = get_function_doc(some_module.SomeClass.some_function, config=custom_config)
