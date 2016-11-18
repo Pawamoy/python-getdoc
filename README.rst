@@ -77,6 +77,14 @@ Usage
     # type being 'function', 'class', or 'module',
     # and nested_doc being a list of dictionnaries as above.
 
+You can get doc for just a class (and its contents), or just a function.
+
+.. code:: python
+
+    from getdoc import get_class_doc, get_function_doc
+
+    doc = get_class_doc(some_module.SomeClass)
+    doc = get_function_doc(some_module.SomeClass.some_function)
 
 A bit more advanced...
 
@@ -99,13 +107,7 @@ A bit more advanced...
         nested_class=False,  # Don't get doc for nested class
         missing_doc=True)  # Still return items if no doc and no nested doc
 
-    # Default method for exclusion is PREFIX.
-    # There is also SUFFIX, EXACT, CONTAINS, REGEX.
-
     doc = get_module_doc(some_module, config=custom_config)
 
-    # You can get doc for just a class (and its contents), or just a function.
-    from getdoc import get_class_doc, get_function_doc
-
-    doc = get_class_doc(some_module.SomeClass, config=custom_config)
-    doc = get_function_doc(some_module.SomeClass.some_function, config=custom_config)
+Default method for exclusion is PREFIX.
+There is also SUFFIX, EXACT, CONTAINS, REGEX.
