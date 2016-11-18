@@ -157,8 +157,13 @@ def get_module_doc(module, config=default_config, already_met=None):
         __import__(module.__name__, fromlist=subm)
 
     # We don't want to include imported items, so we parse the code to blacklist them
-    code = open(module.__file__).read().encode('utf-8')
-    body = ast.parse(code).body
+    try:
+        code = open(module.__file__).read()
+        print(code)
+        body = ast.parse(code).body
+    except SyntaxError:
+        code = open(module.__file__).read().encode('utf-8')
+        body = ast.parse(code).body
     imported = []
     for node in body:
         if isinstance(node, (ast.Import, ast.ImportFrom)):
