@@ -6,6 +6,8 @@ import inspect
 import pkgutil
 import types
 
+__version__ = '0.1.0'
+
 
 def _doc_object(obj, obj_type, nest=None):
     result = {
