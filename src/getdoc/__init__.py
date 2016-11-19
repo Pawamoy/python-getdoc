@@ -162,8 +162,9 @@ def get_module_doc(module, config=default_config, already_met=None):
 
     # Be sure to parse .py and not .pyc file Python 2.X
     module_file = module.__file__
-    module_file = os.path.splitext(module_file)[0]
-    module_file += '.py'
+    path, ext = os.path.splitext(module_file)
+    if ext == '.pyc':
+        module_file = path + '.py'
 
     try:
         code = open(module_file).read()
