@@ -15,6 +15,7 @@ a django_app_config.
 
 import ast
 import inspect
+import os
 import pkgutil
 import re
 import types
@@ -156,14 +157,21 @@ def get_module_doc(module, config=default_config, already_met=None):
         subm = [modname for importer, modname, ispkg in pkgutil.iter_modules(module.__path__)]
         __import__(module.__name__, fromlist=subm)
 
-    # We don't want to include imported items, so we parse the code to blacklist them
+    # We don't want to include imported items,
+    # so we parse the code to blacklist them.
+
+    # Be sure to parse .py and not .pyc file Python 2.X
+    module_file = module.__file__
+    module_file = os.path.splitext(module_file)[0]
+    module_file += '.py'
+
     try:
-        code = open(module.__file__).read()
-        print(code)
+        code = open(module_file).read()
         body = ast.parse(code).body
     except SyntaxError:
-        code = open(module.__file__).read().encode('utf-8')
+        code = open(module_file).read().encode('utf-8')
         body = ast.parse(code).body
+
     imported = []
     for node in body:
         if isinstance(node, (ast.Import, ast.ImportFrom)):
