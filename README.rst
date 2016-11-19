@@ -57,7 +57,7 @@ Installation
 Documentation
 =============
 
-https://github.com/Pawamoy/python-getdoc.wiki
+https://github.com/Pawamoy/python-getdoc/wiki
 
 Development
 ===========
