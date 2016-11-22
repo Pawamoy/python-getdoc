@@ -160,7 +160,7 @@ def get_module_doc(module, config=default_config, already_met=None):
     # We don't want to include imported items,
     # so we parse the code to blacklist them.
 
-    # Be sure to parse .py and not .pyc file Python 2.X
+    # Be sure to parse .py and not .pyc file on Python 2.X
     module_file = module.__file__
     path, ext = os.path.splitext(module_file)
     if ext == '.pyc':
