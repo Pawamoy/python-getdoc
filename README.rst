@@ -1,14 +1,18 @@
 =============
-python-getdoc
+Python getdoc
 =============
 
 .. start-badges
 
+
 |travis|
+|codecov|
 |landscape|
 |version|
 |wheel|
+|pyup|
 |gitter|
+
 
 .. |travis| image:: https://travis-ci.org/Pawamoy/python-getdoc.svg?branch=master
     :alt: Travis-CI Build Status
@@ -22,6 +26,14 @@ python-getdoc
     :target: https://landscape.io/github/Pawamoy/python-getdoc/
     :alt: Code Quality Status
 
+.. |pyup| image:: https://pyup.io/repos/github/pawamoy/python-getdoc/shield.svg
+    :target: https://pyup.io/repos/github/pawamoy/python-getdoc/
+    :alt: Updates
+
+.. |gitter| image:: https://badges.gitter.im/Pawamoy/python-getdoc.svg
+    :alt: Join the chat at https://gitter.im/Pawamoy/python-getdoc
+    :target: https://gitter.im/Pawamoy/python-getdoc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 .. |version| image:: https://img.shields.io/pypi/v/getdoc.svg?style=flat
     :alt: PyPI Package latest release
     :target: https://pypi.python.org/pypi/getdoc/
@@ -29,10 +41,6 @@ python-getdoc
 .. |wheel| image:: https://img.shields.io/pypi/wheel/getdoc.svg?style=flat
     :alt: PyPI Wheel
     :target: https://pypi.python.org/pypi/getdoc/
-
-.. |gitter| image:: https://badges.gitter.im/Pawamoy/python-getdoc.svg
-    :alt: Join the chat at https://gitter.im/Pawamoy/python-getdoc
-    :target: https://gitter.im/Pawamoy/python-getdoc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
 
 .. end-badges
@@ -44,7 +52,6 @@ License
 
 Software licensed under `MPL 2.0`_ license.
 
-.. _BSD-2 : https://opensource.org/licenses/BSD-2-Clause
 .. _MPL 2.0 : https://www.mozilla.org/en-US/MPL/2.0/
 
 Installation

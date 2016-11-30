@@ -8,9 +8,9 @@ Provide function to recursively get documentation for a module or a class,
 and also for a function. Documentation of objects inside a function definition
 will not be retrieved because these objects are created at runtime.
 
-You can filter out modules, classes or functions by defining a new Config object,
-or modifying existing ones. Currently, this module provides a default_config and
-a django_app_config.
+You can filter out modules, classes or functions by defining a new Config
+object, or modifying existing ones. Currently, this module provides a
+default_config and a django_app_config.
 """
 
 import ast
@@ -154,7 +154,10 @@ def get_module_doc(module, config=default_config, already_met=None):
 
     # Force load submodules into module's dict
     if hasattr(module, '__path__'):
-        subm = [modname for importer, modname, ispkg in pkgutil.iter_modules(module.__path__)]
+        subm = [
+            modname for importer, modname, ispkg
+            in pkgutil.iter_modules(module.__path__)
+        ]
         __import__(module.__name__, fromlist=subm)
 
     # We don't want to include imported items,
@@ -190,7 +193,7 @@ def get_module_doc(module, config=default_config, already_met=None):
 
             appended = None
             if isinstance(module_dict[item], types.ModuleType):
-                appended = get_module_doc(module_dict[item], config, already_met)
+                appended = get_module_doc(module_dict[item], config, already_met)  # noqa
             elif isinstance(module_dict[item], type):
                 appended = get_class_doc(module_dict[item], config)
             elif isinstance(module_dict[item], types.FunctionType):
