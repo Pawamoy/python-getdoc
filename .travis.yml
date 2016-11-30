@@ -6,8 +6,6 @@ env:
   - TOXENV=py27,codecov
   - TOXENV=py34,codecov
   - TOXENV=py35,codecov
-  - TOXENV=pypy,codecov
-
 matrix:
   fast_finish: true
 before_install:
