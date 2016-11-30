@@ -167,7 +167,7 @@ def get_module_doc(module, config=default_config, already_met=None):
     if hasattr(module, '__file__'):
         module_file = module.__file__
     else:
-        module_file = inspect.getfile(module)
+        module_file = inspect.getsourcefile(module)
     path, ext = os.path.splitext(module_file)
     if ext == '.pyc':
         module_file = path + '.py'
