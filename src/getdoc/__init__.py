@@ -164,7 +164,10 @@ def get_module_doc(module, config=default_config, already_met=None):
     # so we parse the code to blacklist them.
 
     # Be sure to parse .py and not .pyc file on Python 2.X
-    module_file = module.__file__
+    if hasattr(module, '__file__'):
+        module_file = module.__file__
+    else:
+        module_file = inspect.getfile(module)
     path, ext = os.path.splitext(module_file)
     if ext == '.pyc':
         module_file = path + '.py'
