@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+"""Main test script."""
+
 import getdoc
 from getdoc import Config, Ex, get_class_doc, get_function_doc, get_module_doc
 
