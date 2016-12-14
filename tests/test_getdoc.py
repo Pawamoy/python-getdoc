@@ -9,5 +9,4 @@ import getdoc
 
 def test_main():
     """Main test method."""
-
     assert getdoc  # use your library here
