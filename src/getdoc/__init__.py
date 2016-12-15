@@ -26,7 +26,16 @@ class Ex(object):
     """Exclude modules / classes / functions."""
 
     class Method(object):
-        """Enumeration of available methods."""
+        """
+        Enumeration of available methods.
+
+        Attributes:
+            PREFIX (int): constant.
+            SUFFIX (int): constant.
+            CONTAINS (int): constant.
+            EXACT (int): constant.
+            REGEX (int): constant.
+        """
 
         PREFIX = 0
         SUFFIX = 1
@@ -35,11 +44,26 @@ class Ex(object):
         REGEX = 4
 
     def __init__(self, value, method=Method.PREFIX):
+        """
+        Init method.
+
+        Args:
+            value (str): value to match.
+            method (const): Method constant, matching method.
+        """
         self.value = value
         self.method = method
 
     def match(self, name):
-        """Check if passed name matches."""
+        """
+        Check if given name matches.
+
+        Args:
+            name (str): name to check.
+
+        Returns:
+            bool: matches name.
+        """
         if self.method == Ex.Method.PREFIX:
             return name.startswith(self.value)
         elif self.method == Ex.Method.SUFFIX:
@@ -62,6 +86,16 @@ class Config(object):
                  exclude_function=None,
                  nested_class=False,
                  missing_doc=True):
+        """
+        Init method.
+
+        Args:
+            exclude_module (list): list of Ex instances.
+            exclude_class (list):  list of Ex instances.
+            exclude_function (list):  list of Ex instances.
+            nested_class (bool): whether to get nested classes in classes.
+            missing_doc (bool): whether to get doc even when empty.
+        """
         self.exclude_module = exclude_module
         self.exclude_class = exclude_class
         self.exclude_function = exclude_function
