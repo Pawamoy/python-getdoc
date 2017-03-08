@@ -27,7 +27,6 @@ Python getdoc
     :target: https://landscape.io/github/Pawamoy/python-getdoc/
     :alt: Code Quality Status
 
-
 .. |pyup| image:: https://pyup.io/repos/github/pawamoy/python-getdoc/shield.svg
     :target: https://pyup.io/repos/github/pawamoy/python-getdoc/
     :alt: Updates
@@ -66,7 +65,8 @@ Installation
 Documentation
 =============
 
-https://github.com/Pawamoy/python-getdoc/wiki
+http://python-getdoc.readthedocs.io/en/latest/
+
 
 Development
 ===========
