@@ -19,11 +19,11 @@ Python getdoc
     :target: https://travis-ci.org/Pawamoy/python-getdoc/
 
 .. |codacy| image:: https://api.codacy.com/project/badge/Grade/REPLACE_WITH_PROJECT_ID
-    :target: https://www.codacy.com/app/Pawamoy/python-getdoc/
+    :target: https://www.codacy.com/app/Pawamoy/python-getdoc/dashboard
     :alt: Codacy Code Quality Status
 
-.. |pyup| image:: https://pyup.io/account/repos/github/pawamoy/python-getdoc/shield.svg
-    :target: https://pyup.io/account/repos/github/pawamoy/python-getdoc/
+.. |pyup| image:: https://pyup.io/repos/github/Pawamoy/python-getdoc/shield.svg
+    :target: https://pyup.io/repos/github/Pawamoy/python-getdoc/
     :alt: Updates
 
 .. |gitter| image:: https://badges.gitter.im/Pawamoy/python-getdoc.svg
