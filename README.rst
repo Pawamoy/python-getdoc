@@ -6,7 +6,6 @@ Python getdoc
 
 
 |travis|
-|codacy|
 |version|
 |wheel|
 |pyup|
@@ -16,10 +15,6 @@ Python getdoc
 .. |travis| image:: https://travis-ci.org/Pawamoy/python-getdoc.svg?branch=master
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/Pawamoy/python-getdoc/
-
-.. |codacy| image:: https://api.codacy.com/project/badge/Grade/REPLACE_WITH_PROJECT_ID
-    :target: https://www.codacy.com/app/Pawamoy/python-getdoc/
-    :alt: Codacy Code Quality Status
 
 .. |pyup| image:: https://pyup.io/account/repos/github/pawamoy/python-getdoc/shield.svg
     :target: https://pyup.io/account/repos/github/pawamoy/python-getdoc/
