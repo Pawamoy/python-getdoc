@@ -16,8 +16,8 @@ Python getdoc
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/Pawamoy/python-getdoc/
 
-.. |pyup| image:: https://pyup.io/account/repos/github/pawamoy/python-getdoc/shield.svg
-    :target: https://pyup.io/account/repos/github/pawamoy/python-getdoc/
+.. |pyup| image:: https://pyup.io/repos/github/Pawamoy/python-getdoc/shield.svg
+    :target: https://pyup.io/repos/github/Pawamoy/python-getdoc/
     :alt: Updates
 
 .. |gitter| image:: https://badges.gitter.im/Pawamoy/python-getdoc.svg
