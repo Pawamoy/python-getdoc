@@ -1,7 +1,5 @@
-# pyup: ignore file
 -r base.txt
 
 pytest
 pytest-travis-fold
 pytest-cov
-

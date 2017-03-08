@@ -45,7 +45,7 @@ Python getdoc
 
 .. end-badges
 
-Simple function to get a python module's doc recursively
+Simple function to get a python module's doc recursively.
 
 License
 =======
@@ -64,7 +64,8 @@ Installation
 Documentation
 =============
 
-https://github.com/Pawamoy/python-getdoc/wiki
+http://python-getdoc.readthedocs.io/en/latest/
+
 
 Development
 ===========
