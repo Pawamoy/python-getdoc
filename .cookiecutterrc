@@ -31,7 +31,7 @@ default_context:
     full_name:                       'Timothee Mazzucotelli'
     github_username:                 'Pawamoy'
     gitter:                          'yes'
-    landscape:                       'yes'
+    landscape:                       'no'
     package_name:                    'getdoc'
     project_name:                    'Python getdoc'
     project_short_description:       "Simple function to get a python module's doc recursively"
