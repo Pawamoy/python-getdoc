@@ -17,7 +17,7 @@
 default_context:
 
     appveyor:                        'no'
-    codacy:                          'yes'
+    codacy:                          'no'
     codeclimate:                     'no'
     codecov:                         'no'
     command_line_interface:          'no'
